@@ -7,6 +7,13 @@ from jose import JWTError, jwt
 from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
 import random
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message": "Backend running"}
 
 # =============================
 # APP CONFIG
